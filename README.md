@@ -1,4 +1,4 @@
-1. Data preprocessing:
+1.Data preprocessing:
 
 (1.1.1) Same-City Relationship dataset (same_city folder):
 The basic data includes:
