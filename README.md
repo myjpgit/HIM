@@ -4,7 +4,11 @@ This repository contains an implementation of the Implicit Relation Discovery Fr
 
 Requirements
 --------
-HIM relies on Python 3.6, PyTorch 1.7.0 and Tensorflow 1.8.0. For detailed requirements, please refer to requirements.txt.
+HIM relies on Python 3.6, PyTorch 1.7.0 and Tensorflow 1.8.0. For detailed requirements, please refer to requirements.txt. NIM and its dependencies can be installed by navigating to the cloned directory and running:
+
+```
+pip install -r requirements.txt
+```  
 
 Datasets
 --------
