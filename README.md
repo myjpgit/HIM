@@ -1,6 +1,6 @@
 HIM: Discovering Implicit Relationships in Heterogeneous Social Networks
 ========
-This repository contains an implementation of the Implicit Relation Discovery Framework (HIM) for heterogeneous networks, as well as experiments on Implicit Relation Prediction. A description of the model and results can be found in the paper:
+This repository contains an implementation of the Implicit Relation Discovery Framework (HIM) for heterogeneous networks, as well as experiments on Implicit Relation Prediction. A description of the model and results can be found in our paper.
 
 Requirements
 --------
