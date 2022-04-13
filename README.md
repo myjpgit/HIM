@@ -1,14 +1,29 @@
-#HIM: Discovering Implicit Relationships in Heterogeneous Social Networks
-Requirements
-1.Data preprocessing:
+HIM: Discovering Implicit Relationships in Heterogeneous Social Networks
+========
+This repository contains an implementation of the Implicit Relation Discovery Framework (HIM) for heterogeneous networks, as well as experiments on Implicit Relation Prediction. A description of the model and results can be found in the paper:
 
-(1.1.1) Same-City Relationship dataset (same_city folder):
-The basic data includes:
-· refined_data/data.txt
-· refined_data/node_features.txt
-· refined_data/node_ind.txt
-· data/relation_true.txt
-· data/relation_false.txt
+Requirements
+--------
+HIM relies on Python 3.6, PyTorch 1.7.0 and Tensorflow 1.8.0. For detailed requirements, please refer to requirements.txt.
+
+Datasets
+--------
+* Same-City Relationship
+* Advisor-Advisee Relationship
+* Terrorist Attacks
+Same-City Relationship and Advisor-Advisee Relationship can be downloaded from the following link：
+[HIMdata](https://github.com/myjpgit/HIMdata.git)
+
+Data preprocessing
+---------
+
+### Same-City Relationship dataset (same_city folder):
+The metadata includes:
+* refined_data/data.txt
+* refined_data/node_features.txt
+* refined_data/node_ind.txt
+* data/relation_true.txt
+* data/relation_false.txt
 
 Run python generate_data.py to generate refined_data/true_false.txt, refined_data/train_data.txt, refined_data/test_data.txt and data/train_true_data.txt
 
@@ -24,7 +39,7 @@ Run python generate_aa_list.py to generate ANSWER/HetGNN_samecity/data/academic/
 
 Run python generate_neigh.py to generate ANSWER/HetGNN_samecity/data/academic/het_neigh.txt
 
-(1.1.2) Same-City Relationship dataset (HetGNN_samecity folder):
+### Same-City Relationship dataset (HetGNN_samecity folder):
 Before processing the data, the reader needs to copy the ANSWER/same_city/refined_data/node_features.mat to the ANSWER/HetGNN_samecity/data/academic/node_features.mat.
 
 Run python het_random_walk_generate.py to generate data/academic/het_random_walk.txt
@@ -37,17 +52,17 @@ The above is the preprocessing method of the Same-City Relationship dataset
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-(1.2.1) Advisor-Advisee Relationship dataset (advisor_advisee folder):
-The basic data includes:
-· refined_data/data.txt
-· refined_data/aut_institution.mat
-· refined_data/author_paper.mat
-· refined_data/paper_attribute.mat
-· refined_data/node_ind.txt
-· refined_data/author_index.txt
-· refined_data/one_hot_vector.mat
-· data/relation_true.txt
-· data/relation_false.txt
+### Advisor-Advisee Relationship dataset (advisor_advisee folder):
+The metadata includes:
+* refined_data/data.txt
+* refined_data/aut_institution.mat
+* refined_data/author_paper.mat
+* refined_data/paper_attribute.mat
+* refined_data/node_ind.txt
+* refined_data/author_index.txt
+* refined_data/one_hot_vector.mat
+* data/relation_true.txt
+* data/relation_false.txt
 
 Run python generate_data.py to generate refined_data/advisor_collaborator.txt, refined_data/train_data.txt, refined_data/test_data.txt and data/train_true_data.txt
 
@@ -61,7 +76,7 @@ Run python generate_aa_list.py to generate ANSWER/HetGNN_advisor/data/academic/a
 
 Run python generate_neigh.py to generate ANSWER/HetGNN_advisor/data/academic/het_neigh.txt
 
-(1.2.2) Advisor-Advisee Relationship dataset (HetGNN_advisor folder):
+### Advisor-Advisee Relationship dataset (HetGNN_advisor folder):
 Before processing the data, the reader needs to copy the ANSWER/advisor_advisee/refined_data/author_paper.mat to the ANSWER/HetGNN_advisor/data/academic/author_paper.mat, copy the ANSWER/advisor_advisee/refined_data/aut_institution.mat to the ANSWER/HetGNN_advisor/data/academic/aut_institution.mat.
 
 Run python het_random_walk_generate.py to generate data/academic/het_random_walk.txt
@@ -78,8 +93,8 @@ The above is the preprocessing method of the Advisor-Advisee Relationship datase
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-(1.3.1) Terrorist Attacks dataset (terror_attack folder): 
-The basic data includes:
+### Terrorist Attacks dataset (terror_attack folder): 
+The metadata includes:
 · refined_data/data.txt
 · refined_data/node_feature.mat
 · refined_data/node_ind.txt
@@ -100,7 +115,7 @@ Run python generate_aa_list.py to generate ANSWER/HetGNN_terror/data/academic/a_
 
 Run python generate_neigh.py to generate ANSWER/HetGNN_terror/data/academic/het_neigh.txt
 
-(1.3.2) Terrorist Attacks dataset (HetGNN_terror folder):
+### Terrorist Attacks dataset (HetGNN_terror folder):
 Before processing the data, the reader needs to copy the ANSWER/terror_attack/refined_data/node_feature.mat to the ANSWER/HetGNN_terror/data/academic/node_feature.mat.
 
 Run python het_random_walk_generate.py to generate data/academic/het_random_walk.txt
@@ -113,46 +128,47 @@ The above is the preprocessing method of the Terrorist Attacks dataset
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-2.Model training:
+Model training
+-----------
 
-(2.1.1) ANSWER for Same-City Relationship dataset
+#### ANSWER for Same-City Relationship dataset
 Run ANSWER/GCN_ef/main_samecity.py
 
-(2.1.2) ANSWER for Advisor-Advisee Relationship dataset
+#### ANSWER for Advisor-Advisee Relationship dataset
 Run ANSWER/GCN_ef/main_aa.py
 
-(2.1.3) ANSWER for Terrorist Attacks dataset
+#### ANSWER for Terrorist Attacks dataset
 Run ANSWER/GCN_ef/main_ta.py
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
-
-(2.2.1) ANSWER-LAP for Same-City Relationship dataset
+#### ANSWER-LAP for Same-City Relationship dataset
 Run ANSWER/GCN_LAP/main_samecity.py
 
-(2.2.2) ANSWER-LAP for Advisor-Advisee Relationship dataset
+#### ANSWER-LAP for Advisor-Advisee Relationship dataset
 Run ANSWER/GCN_LAP/main_aa.py
 
-(2.2.3) ANSWER-LAP for Terrorist Attacks dataset
+#### ANSWER-LAP for Terrorist Attacks dataset
 Run ANSWER/GCN_LAP/main_ta.py
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
-
-(2.3.1) ANSWER-WOHET for Same-City Relationship dataset
+#### ANSWER-WOHET for Same-City Relationship dataset
 Run ANSWER/GCN_WOHET/main_samecity.py
 
-(2.3.2) ANSWER-WOHET for Advisor-Advisee Relationship dataset
+#### ANSWER-WOHET for Advisor-Advisee Relationship dataset
 Run ANSWER/GCN_WOHET/main_aa.py
 
-(2.3.3) ANSWER-WOHET for Terrorist Attacks dataset
+#### ANSWER-WOHET for Terrorist Attacks dataset
 Run ANSWER/GCN_WOHET/main_ta.py
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
-
-(2.4.1) ANSWER-WOLAW for Same-City Relationship dataset
+#### ANSWER-WOLAW for Same-City Relationship dataset
 Run ANSWER/GCN_WOLAW/main_samecity.py
 
-(2.4.2) ANSWER-WOLAW for Advisor-Advisee Relationship dataset
+#### ANSWER-WOLAW for Advisor-Advisee Relationship dataset
 Run ANSWER/GCN_WOLAW/main_aa.py
 
-(2.4.3) ANSWER-WOLAW for Terrorist Attacks dataset
+#### ANSWER-WOLAW for Terrorist Attacks dataset
 Run ANSWER/GCN_WOLAW/main_ta.py
