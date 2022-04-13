@@ -40,7 +40,7 @@ Run python generate_aa_list.py to generate ANSWER/HetGNN_samecity/data/academic/
 Run python generate_neigh.py to generate ANSWER/HetGNN_samecity/data/academic/het_neigh.txt
 
 ### Same-City Relationship dataset (HetGNN_samecity folder):
-Before processing the data, the reader needs to copy the ANSWER/same_city/refined_data/node_features.mat to the ANSWER/HetGNN_samecity/data/academic/node_features.mat.
+Before processing, please copy the ANSWER/same_city/refined_data/node_features.mat to the ANSWER/HetGNN_samecity/data/academic/node_features.mat.
 
 Run python het_random_walk_generate.py to generate data/academic/het_random_walk.txt
 
@@ -77,7 +77,7 @@ Run python generate_aa_list.py to generate ANSWER/HetGNN_advisor/data/academic/a
 Run python generate_neigh.py to generate ANSWER/HetGNN_advisor/data/academic/het_neigh.txt
 
 ### Advisor-Advisee Relationship dataset (HetGNN_advisor folder):
-Before processing the data, the reader needs to copy the ANSWER/advisor_advisee/refined_data/author_paper.mat to the ANSWER/HetGNN_advisor/data/academic/author_paper.mat, copy the ANSWER/advisor_advisee/refined_data/aut_institution.mat to the ANSWER/HetGNN_advisor/data/academic/aut_institution.mat.
+Before processing, please copy the ANSWER/advisor_advisee/refined_data/author_paper.mat to the ANSWER/HetGNN_advisor/data/academic/author_paper.mat, copy the ANSWER/advisor_advisee/refined_data/aut_institution.mat to the ANSWER/HetGNN_advisor/data/academic/aut_institution.mat.
 
 Run python het_random_walk_generate.py to generate data/academic/het_random_walk.txt
 
@@ -95,11 +95,11 @@ The above is the preprocessing method of the Advisor-Advisee Relationship datase
 
 ### Terrorist Attacks dataset (terror_attack folder): 
 The metadata includes:
-· refined_data/data.txt
-· refined_data/node_feature.mat
-· refined_data/node_ind.txt
-· data/relation_true.txt
-· data/relation_false.txt
+* refined_data/data.txt
+* refined_data/node_feature.mat
+* refined_data/node_ind.txt
+* data/relation_true.txt
+* data/relation_false.txt
 
 Run python generate_data.py to generate refined_data/true_false.txt, refined_data/train_data.txt, refined_data/test_data.txt and data/train_true_data.txt
 
@@ -116,7 +116,7 @@ Run python generate_aa_list.py to generate ANSWER/HetGNN_terror/data/academic/a_
 Run python generate_neigh.py to generate ANSWER/HetGNN_terror/data/academic/het_neigh.txt
 
 ### Terrorist Attacks dataset (HetGNN_terror folder):
-Before processing the data, the reader needs to copy the ANSWER/terror_attack/refined_data/node_feature.mat to the ANSWER/HetGNN_terror/data/academic/node_feature.mat.
+Before processing, please copy the ANSWER/terror_attack/refined_data/node_feature.mat to the ANSWER/HetGNN_terror/data/academic/node_feature.mat.
 
 Run python het_random_walk_generate.py to generate data/academic/het_random_walk.txt
 
