@@ -25,14 +25,14 @@ Data preprocessing
 ### Same-City Relationship dataset (same_city folder):
 The metadata includes:
 * refined_data/data.txt
-* refined_data/node_features.txt
+* refined_data/node_feature.txt
 * refined_data/node_ind.txt
 * data/relation_true.txt
 * data/relation_false.txt
 
 Run python generate_data.py to generate refined_data/true_false.txt, refined_data/train_data.txt, refined_data/test_data.txt and data/train_true_data.txt
 
-Run python generate_vector.py to generate refined_data/node_features.mat and refined_data/one_hot_vector.mat
+Run python generate_vector.py to generate refined_data/node_feature.mat and refined_data/one_hot_vector.mat
 
 Run python refine_adj.py to generate refined_data/node_node.mat
 
