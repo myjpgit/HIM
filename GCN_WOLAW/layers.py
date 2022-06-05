@@ -1,6 +1,6 @@
 
 import tensorflow as tf
-from GCN_ef.inits import *
+from GCN_WOLAW.inits import *
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
@@ -95,7 +95,7 @@ class GraphConvolution(Layer):
         self.support = placeholders['support']
         self.sparse_inputs = sparse_inputs
         self.bias = bias
-        self.abias=abias
+        self.abias = abias
 
         with tf.variable_scope(self.name + '_vars'):
             for i in range(len(self.support)):

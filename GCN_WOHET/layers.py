@@ -1,6 +1,6 @@
 
 import tensorflow as tf
-from GCN_ef.inits import *
+from GCN_WOHET.inits import *
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS

@@ -1,6 +1,6 @@
 
 import tensorflow as tf
-from GCN_ef.inits import *
+from GCN_WOLAW.inits import *
 
 
 class BilinearDecoder():

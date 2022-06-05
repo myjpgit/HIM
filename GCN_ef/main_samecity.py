@@ -82,7 +82,44 @@ res_recall=0.0
 res_pre=0.0
 res_acc=0.0
 
-for _ in range(10):
+# for _ in range(10):
+#     sess=tf.Session()
+#     sess.run(tf.global_variables_initializer())
+#     row_test,col_test=extract_test_data(FLAGS.dataset)
+#     label_test=np.repeat([1,0],len(row_test)//2)
+#     # row_valid, col_valid = extract_val_data(FLAGS.dataset)
+#     # label_valid = np.repeat([1, 0], len(row_valid) // 2)
+#
+#     auc_test=0.0
+#     rank_test=0.0
+#     #precision_test=0.0
+#     #recall_test=0.0
+#     minibatch=MiniBatch(FLAGS.dataset,FLAGS.batch_size)
+#
+#     for epoch in range(FLAGS.epoches):
+#         row_edge_idx,col_pos_edge_idx,col_neg_edge_idx=minibatch.get_batch_data()
+#         feed_dict=construct_feed_dict(row_edge_idx,col_pos_edge_idx,efeature,col_neg_edge_idx)
+#         outs=sess.run([model.opt_op,model.loss,model.abias],feed_dict=feed_dict)
+#         feed_dict = construct_feed_dict(row_test, col_test,efeature)
+#         test_pred = sess.run(model.pos_relation, feed_dict=feed_dict)
+#         auc_test = roc_auc_score(label_test, test_pred)
+#         test_pred = np.int64(test_pred >= 0.5)
+#         acc_test = accuracy_score(label_test, test_pred)
+#         precision_test = precision_score(label_test, test_pred, average='weighted')
+#         recall_test = recall_score(label_test, test_pred, average='weighted')
+#         F1_test = ((2.0 * precision_test * recall_test) / (precision_test + recall_test))
+#         print('iter: {},  acc of test: {:5f}, auc of test: {:5f}, F1_score of test: {:5f}, recall of test: {:5f}, Precision of test: {:5f}'.format(epoch,acc_test,auc_test,F1_test,recall_test,precision_test))
+#     #print(auc_test,rank_test)
+#     res_acc+=acc_test
+#     res_auc+=auc_test
+#     res_rank+=rank_test
+#     res_pre+=precision_test
+#     res_F1+=F1_test
+#     res_recall+=recall_test
+#     sess.close()
+# print('Auc:',res_auc/10, 'Acc:',res_acc/10, 'F1-score:',res_F1/10, 'Recall:',res_recall/10, 'Precision',res_pre/10)
+
+for _ in range(5):
     sess=tf.Session()
     sess.run(tf.global_variables_initializer())
     row_test,col_test=extract_test_data(FLAGS.dataset)
@@ -117,5 +154,4 @@ for _ in range(10):
     res_F1+=F1_test
     res_recall+=recall_test
     sess.close()
-print('Auc:',res_auc/10, 'Acc:',res_acc/10, 'F1-score:',res_F1/10, 'Recall:',res_recall/10, 'Precision',res_pre/10)
-
+print('Auc:',res_auc/5, 'Acc:',res_acc/5, 'F1-score:',res_F1/5, 'Recall:',res_recall/5, 'Precision',res_pre/5)

@@ -2,12 +2,12 @@
 from __future__ import division
 from __future__ import print_function
 import tensorflow as tf
-from GCN_ef.models import GCN
-from GCN_ef.minibatch import MiniBatch
+from GCN_WOLAW.models import GCN
+from GCN_WOLAW.minibatch import MiniBatch
 from sklearn.metrics import roc_auc_score
 import numpy as np
 from sklearn.metrics import precision_score, recall_score, accuracy_score
-from GCN_ef.utils import *
+from GCN_WOLAW.utils import *
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
@@ -118,4 +118,3 @@ for _ in range(10):
     res_recall+=recall_test
     sess.close()
 print('Auc:',res_auc/10, 'Acc:',res_acc/10, 'F1-score:',res_F1/10, 'Recall:',res_recall/10, 'Precision',res_pre/10)
-

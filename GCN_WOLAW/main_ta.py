@@ -3,13 +3,13 @@ from __future__ import print_function
 import sys
 sys.path.extend(['E:\\python-test\\Implicit_relationship'])
 import tensorflow as tf
-from GCN_ef.models import GCN
-from GCN_ef.minibatch import MiniBatch
+from GCN_WOLAW.models import GCN
+from GCN_WOLAW.minibatch import MiniBatch
 from sklearn.metrics import roc_auc_score, auc
 from sklearn.metrics import precision_score, recall_score, accuracy_score
 import numpy as np
 
-from GCN_ef.utils import *
+from GCN_WOLAW.utils import *
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"

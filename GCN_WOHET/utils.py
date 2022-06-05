@@ -48,7 +48,7 @@ def extract_feature(data):
         item_att_2=one_hot['item_2']
         return item_att_1,item_att_2
     elif data=='terror_attack':
-        fea_att=one_hot['feature']
+        fea_att=one_hot['node_feature']
         return fea_att
     elif data=='same_city':
         fea_att=one_hot['feature']

@@ -48,7 +48,7 @@ def extract_feature(data):
         item_att_2=one_hot['item_2']
         return item_att_1,item_att_2
     elif data=='terror_attack':
-        fea_att=one_hot['feature']
+        fea_att=one_hot['node_feature']
         return fea_att
     elif data=='same_city':
         fea_att=one_hot['feature']
@@ -89,7 +89,7 @@ def extract_adj(data):
         return node_node['node_node_1'],node_node['node_node_2'],node_feature['node_feature'],np.array(adj),np.array(efeature)
     elif data=='same_city':
         node_node=sio.loadmat('../'+data+'/refined_data/node_node.mat')
-        node_feature = sio.loadmat('../' + data + '/refined_data/end_node_embedding.mat')
+        node_feature = sio.loadmat('../' + data + '/refined_data/end_node_embeddings.mat')
         adj=np.load('../'+data+'/refined_data/adj.npy')
         efeature=np.load('../'+data+'/refined_data/efeature.npy')
         return node_node['node_node_1'], node_node['node_node_2'], node_feature['node_feature'], np.array(adj), np.array(efeature)

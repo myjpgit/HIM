@@ -15,6 +15,7 @@ class Heteros():
     def __init__(self,hetero_input_dim, output_dim, placeholders,act=tf.nn.relu, bias=False):
 
         self.act = act
+        self.support = placeholders['support']
         self.hetero_support=placeholders['hetero_support']
         self.bias = bias
         self.hetero_feature=placeholders['hetero_feature']
